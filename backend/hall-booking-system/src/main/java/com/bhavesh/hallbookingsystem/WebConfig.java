@@ -10,9 +10,9 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/api/**")               // Apply to all API endpoints (e.g., /api/bookings)
-                .allowedOrigins("http://localhost:5173")  // Allow requests from React frontend running on port 3000
-                .allowedMethods("GET", "POST", "PUT", "DELETE")  // Allow the necessary HTTP methods
-                .allowedHeaders("*");  // Allow all headers
+        registry.addMapping("/**")  // Enable CORS for all endpoints
+                .allowedOrigins("http://localhost:3000")  // Allow React frontend (adjust the port if needed)
+                .allowedMethods("GET", "POST", "PUT", "DELETE")
+                .allowCredentials(true);
     }
 }

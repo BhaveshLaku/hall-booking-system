@@ -1,0 +1,25 @@
+/* src/styles/styles.css */
+body {
+  font-family: Arial, sans-serif;
+}
+
+input,
+button {
+  padding: 8px;
+  margin: 5px;
+}
+
+button {
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+}
