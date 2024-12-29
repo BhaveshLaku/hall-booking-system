@@ -5,8 +5,7 @@ import BookingList from "./components/BookingList";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import "./assets/css/global.css";
-import Navbar from "./components/Navbar"; // Added Navbar
-import "bootstrap/dist/css/bootstrap.min.css"; // Bootstrap CSS
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (

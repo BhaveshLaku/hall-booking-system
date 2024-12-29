@@ -6,7 +6,7 @@ const BookingItem = ({ booking }) => {
     try {
       await bookingService.deleteBooking(booking.applicationNumber);
       alert("Booking deleted successfully!");
-      window.location.reload(); // Refresh the list after deletion
+      window.location.reload();
     } catch (error) {
       console.error("Error deleting booking:", error);
     }

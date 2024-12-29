@@ -27,7 +27,7 @@ public class Booking {
 
 
     // Getters and Setters
-    public Long getId() {
+    public Long getId() {   
         return id;
     }
 

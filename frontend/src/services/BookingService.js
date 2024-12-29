@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8081/api/bookings"; // Adjust as necessary
+const API_URL = "http://localhost:8081/api/bookings";
 
 const getAllBookings = async () => {
   const response = await axios.get(API_URL);

@@ -59,7 +59,7 @@ const BookingEdit = () => {
         body: JSON.stringify(updatedBooking),
       });
       alert("Booking updated successfully!");
-      navigate("/"); // Redirect to the booking list after saving
+      navigate("/");
     } catch (error) {
       console.error("Error updating booking:", error);
     }

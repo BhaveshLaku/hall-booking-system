@@ -41,7 +41,6 @@ const BookingForm = () => {
           setError("Error fetching booking details: " + error.message)
         );
     } else {
-      // Set default start date to today's date in IST
       const today = new Date().toLocaleDateString("en-CA");
       setBooking((prevBooking) => ({
         ...prevBooking,
@@ -72,7 +71,7 @@ const BookingForm = () => {
       .createBooking(booking)
       .then(() => {
         setSuccess("Booking created successfully!");
-        navigate("/"); // Redirect to home after successful booking
+        navigate("/");
       })
       .catch((error) => setError("Error creating booking: " + error.message));
   };
@@ -84,7 +83,9 @@ const BookingForm = () => {
       {success && <Alert variant="success">{success}</Alert>}
       <Form onSubmit={handleSubmit}>
         <Form.Group className="form-group">
-          <Form.Label>Applicant Name</Form.Label>
+          <Form.Label>
+            Applicant Name <span className="required">*</span>
+          </Form.Label>
           <Form.Control
             type="text"
             name="applicantName"
@@ -95,7 +96,9 @@ const BookingForm = () => {
         </Form.Group>
 
         <Form.Group className="form-group">
-          <Form.Label>Email</Form.Label>
+          <Form.Label>
+            Email <span className="required">*</span>
+          </Form.Label>
           <Form.Control
             type="email"
             name="email"
@@ -106,7 +109,9 @@ const BookingForm = () => {
         </Form.Group>
 
         <Form.Group className="form-group">
-          <Form.Label>Mobile</Form.Label>
+          <Form.Label>
+            Mobile <span className="required">*</span>
+          </Form.Label>
           <Form.Control
             type="text"
             name="mobile"
@@ -117,7 +122,9 @@ const BookingForm = () => {
         </Form.Group>
 
         <Form.Group className="form-group">
-          <Form.Label>Hall Name</Form.Label>
+          <Form.Label>
+            Hall Name <span className="required">*</span>
+          </Form.Label>
           <Form.Control
             type="text"
             name="hallName"
@@ -128,40 +135,56 @@ const BookingForm = () => {
         </Form.Group>
 
         <Form.Group className="form-group">
-          <Form.Label>Booking Type</Form.Label>
+          <Form.Label>
+            Booking Type <span className="required">*</span>
+          </Form.Label>
           <Form.Control
-            type="text"
+            as="select"
             name="bookingType"
             value={booking.bookingType}
             onChange={handleChange}
             required
-          />
+          >
+            <option value="">Select Booking Type</option>
+            <option value="Individual">Individual</option>
+            <option value="Corporate">Corporate</option>
+            <option value="Community">Community</option>
+            <option value="Others">Others</option>
+          </Form.Control>
         </Form.Group>
 
         <Form.Group className="form-group">
-          <Form.Label>Start Date</Form.Label>
+          <Form.Label>
+            Start Date <span className="required">*</span>
+          </Form.Label>
           <Form.Control
             type="date"
             name="startDate"
             value={booking.startDate}
             onChange={handleChange}
             required
+            min={new Date().toISOString().split("T")[0]}
           />
         </Form.Group>
 
         <Form.Group className="form-group">
-          <Form.Label>End Date</Form.Label>
+          <Form.Label>
+            End Date <span className="required">*</span>
+          </Form.Label>
           <Form.Control
             type="date"
             name="endDate"
             value={booking.endDate}
             onChange={handleChange}
             required
+            min={booking.startDate}
           />
         </Form.Group>
 
         <Form.Group className="form-group">
-          <Form.Label>Rent</Form.Label>
+          <Form.Label>
+            Rent <span className="required">*</span>
+          </Form.Label>
           <Form.Control
             type="number"
             name="rent"

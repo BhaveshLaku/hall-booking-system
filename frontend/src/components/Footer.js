@@ -1,15 +1,19 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
 import "../assets/css/footer.css";
 
 const Footer = () => {
   return (
-    <footer>
-      <div>
-        <p className="footer-text">&copy; 2024 ASCENTech Assignment.</p>
+    <footer className="footer">
+      <div className="footer-container">
+        <p className="footer-text">&copy; 2024 ASCENTech Assignment</p>
         <p className="footer-text">
           Designed by{" "}
-          <a href="https://www.your-website-link.com" className="footer-link">
+          <a
+            href="https://www.your-website-link.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-link"
+          >
             Bhavesh Laku
           </a>
         </p>

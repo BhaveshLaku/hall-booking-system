@@ -32,11 +32,15 @@ const BookingList = () => {
   };
 
   return (
-    <div className="container">
+    <div>
       <h3>Booking List</h3>
       {error && <Alert variant="danger">{error}</Alert>}
       {success && <Alert variant="success">{success}</Alert>}
-      <Button className="create-btn mb-3" onClick={() => navigate("/booking")}>
+      <Button
+        className="mb-3"
+        variant="warning"
+        onClick={() => navigate("/booking")}
+      >
         Create New Booking
       </Button>
       <Table striped bordered hover>
@@ -48,7 +52,7 @@ const BookingList = () => {
             <th>Mobile</th>
             <th>Hall Name</th>
             <th>Rent</th>
-            <th>Additional Charges</th> {/* Added Additional Charges Column */}
+            <th>Additional Charges</th> {}
             <th>Start Date</th>
             <th>End Date</th>
             <th>Status</th>
@@ -65,20 +69,20 @@ const BookingList = () => {
               <td>{booking.mobile}</td>
               <td>{booking.hallName}</td>
               <td>{booking.rent}</td>
-              <td>{booking.additionalCharges}</td>
+              <td>{booking.additionalCharges}</td> {}
               <td>{booking.startDate}</td>
               <td>{booking.endDate}</td>
               <td>{booking.status}</td>
               <td>{booking.applicationNo}</td>
               <td>
                 <Button
-                  className="edit-btn"
+                  variant="primary"
                   onClick={() => navigate(`/booking/${booking.id}`)}
                 >
                   Edit
                 </Button>{" "}
                 <Button
-                  className="delete-btn"
+                  variant="danger"
                   onClick={() => handleDelete(booking.id)}
                 >
                   Delete
