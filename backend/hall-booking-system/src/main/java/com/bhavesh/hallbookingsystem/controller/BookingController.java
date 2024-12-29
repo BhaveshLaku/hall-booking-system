@@ -3,6 +3,7 @@ package com.bhavesh.hallbookingsystem.controller;
 import com.bhavesh.hallbookingsystem.entity.Booking;
 import com.bhavesh.hallbookingsystem.service.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,6 +30,13 @@ public class BookingController {
     public ResponseEntity<Booking> updateBooking(@PathVariable Long id, @RequestBody Booking bookingDetails) {
         return ResponseEntity.ok(bookingService.updateBooking(id, bookingDetails));
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Booking> getBookingById(@PathVariable Long id) {
+        Booking booking = bookingService.getBookingById(id);
+        return ResponseEntity.ok(booking);
+    }
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteBooking(@PathVariable Long id) {

@@ -35,4 +35,12 @@
   to {
     transform: rotate(360deg);
   }
+
+  header {
+    margin-bottom: 20px;
+  }
+
+  footer {
+    margin-top: 40px;
+  }
 }

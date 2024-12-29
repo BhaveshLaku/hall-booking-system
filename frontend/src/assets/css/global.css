@@ -1,0 +1,407 @@
+/* global.css */
+
+/* Universal Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #2c3e50; /* Darker gradient background for modern feel */
+  color: #ecf0f1; /* Light text color for readability */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  flex: 1; /* Ensures it takes the available space */
+}
+
+/* Header */
+header {
+  background: linear-gradient(
+    135deg,
+    #1e2a47,
+    #4b5c6b
+  ); /* Elegant dark gradient */
+  padding: 15px 50px; /* Balanced padding */
+  color: #ecf0f1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+header .logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  cursor: pointer;
+}
+
+/* Navigation Styling */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* Space out the navigation items */
+}
+
+nav a {
+  color: #ecf0f1;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for Navigation Links */
+nav a:hover {
+  background-color: #f39c12; /* Bright golden hover effect */
+  color: #fff; /* Change text color to white on hover */
+  transform: scale(1.05); /* Slight scale-up effect */
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+  header {
+    padding: 10px 20px; /* Reduce padding on small screens */
+  }
+
+  nav {
+    gap: 20px; /* Reduce gap between items */
+  }
+
+  nav a {
+    font-size: 14px; /* Adjust font size for small screens */
+    padding: 6px 12px; /* Adjust padding for smaller devices */
+  }
+}
+
+/* Global Styles */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7fb;
+  color: #2c3e50;
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  text-align: center;
+  font-size: 28px;
+  color: #34495e;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.alert {
+  margin-bottom: 20px;
+}
+
+/* Form Container */
+.booking-form-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #f5f5f5; /* Light grey background */
+  border-radius: 8px;
+  border: 1px solid #dcdcdc; /* Super light grey border */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styling */
+form {
+  background: #f9f9f9; /* Slightly lighter grey background */
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0; /* Lighter grey border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 16px;
+  color: #34495e;
+  font-weight: 600;
+}
+
+.form-group .form-control {
+  height: 40px;
+  font-size: 16px;
+  padding-left: 10px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  transition: border 0.3s ease;
+}
+
+.form-group .form-control:focus {
+  border-color: #3498db; /* Blue border on focus */
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.form-group textarea.form-control {
+  height: 100px;
+  resize: none;
+}
+
+/* Button */
+button[type="submit"] {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #2980b9;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .booking-form-container {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  .form-group label {
+    font-size: 14px;
+  }
+
+  .form-group .form-control {
+    font-size: 14px;
+  }
+
+  button[type="submit"] {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+}
+
+/* Content Section */
+section {
+  background: #ecf0f1;
+  color: #2c3e50;
+  padding: 40px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+/* Reset form fields to fit clean design */
+input,
+button,
+select,
+textarea {
+  border: 1px solid #2c3e50;
+  background: #34495e;
+  color: #ecf0f1;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+input[type="date"],
+select {
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+/* Button Styles */
+button,
+.btn {
+  background: #f39c12; /* Golden color */
+  color: #fff;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover,
+.btn:hover {
+  background: #e67e22; /* Darker golden color on hover */
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+table th,
+table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+table th {
+  background-color: #34495e;
+  color: #fff;
+}
+
+table td {
+  background-color: #ecf0f1;
+}
+
+table tr:hover td {
+  background-color: #f1c40f;
+  color: #2c3e50;
+}
+
+/* Footer */
+footer {
+  background: #34495e;
+  color: #ecf0f1;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 16px;
+  margin-top: auto; /* Ensures footer stays at the bottom */
+}
+
+footer p {
+  margin: 0;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+/* Alert Styles */
+.alert {
+  margin: 20px 0;
+  font-size: 16px;
+}
+
+.alert-danger {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.alert-success {
+  background-color: #2ecc71;
+  color: #fff;
+}
+
+/* Form Styles */
+form {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color: #f39c12;
+  outline: none;
+}
+
+/* Button Color Modifications for Edit and Delete */
+button.create-btn {
+  background-color: #d88b10; /* Yellow for Create New Booking */
+}
+
+button.edit-btn {
+  background-color: #374bff; /* Yellow for Edit */
+}
+
+button.delete-btn {
+  background-color: #e74c3c; /* Red for Delete */
+}
+
+button.create-btn:hover {
+  background-color: #e67e22; /* Darker yellow for Create New Booking hover */
+}
+
+button.edit-btn:hover {
+  background-color: #0a22c1; /* Darker yellow for Edit hover */
+}
+
+button.delete-btn:hover {
+  background-color: #c0392b; /* Darker red for Delete hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 24px;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    margin: 10px 0;
+  }
+
+  section {
+    padding: 20px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  footer {
+    font-size: 14px;
+  }
+}

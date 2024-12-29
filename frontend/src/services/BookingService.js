@@ -1,46 +1,30 @@
 import axios from "axios";
 
-// Set up the base URL for your API
-const API_URL = "http://localhost:8081/api/bookings"; // Adjust if needed
+const API_URL = "http://localhost:8081/api/bookings"; // Adjust as necessary
 
-// Get all bookings
-const getAllBookings = () => {
-  return axios
-    .get(API_URL)
-    .then((response) => response.data)
-    .catch((error) => {
-      console.error("There was an error fetching the bookings!", error);
-      throw error;
-    });
+const getAllBookings = async () => {
+  const response = await axios.get(API_URL);
+  return response.data;
 };
 
-// Create a new booking
-const createBooking = (booking) => {
-  return axios
-    .post(API_URL, booking)
-    .then((response) => response.data)
-    .catch((error) => {
-      console.error("There was an error creating the booking!", error);
-      throw error;
-    });
+const createBooking = async (booking) => {
+  const response = await axios.post(API_URL, booking);
+  return response.data;
 };
 
-// Delete a booking
-const deleteBooking = (id) => {
-  return axios
-    .delete(`${API_URL}/${id}`)
-    .then((response) => response.data)
-    .catch((error) => {
-      console.error(
-        `There was an error deleting the booking with ID ${id}!`,
-        error
-      );
-      throw error;
-    });
+const updateBooking = async (booking) => {
+  const response = await axios.put(`${API_URL}/${booking.id}`, booking);
+  return response.data;
+};
+
+const deleteBooking = async (id) => {
+  const response = await axios.delete(`${API_URL}/${id}`);
+  return response.data;
 };
 
 export default {
   getAllBookings,
   createBooking,
+  updateBooking,
   deleteBooking,
 };

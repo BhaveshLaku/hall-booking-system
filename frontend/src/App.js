@@ -1,28 +1,25 @@
-import React, { useState, useEffect } from "react";
-import "./App.css"; // Custom CSS for styling
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import BookingForm from "./components/BookingForm";
 import BookingList from "./components/BookingList";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import "./assets/css/global.css";
+import Navbar from "./components/Navbar"; // Added Navbar
+import "bootstrap/dist/css/bootstrap.min.css"; // Bootstrap CSS
 
 function App() {
-  const [bookings, setBookings] = useState([]);
-
-  // Fetch all bookings on component mount
-  useEffect(() => {
-    const fetchBookings = async () => {
-      const data = await fetch("http://localhost:8081/api/bookings");
-      const bookings = await data.json();
-      setBookings(bookings);
-    };
-
-    fetchBookings();
-  }, []);
-
   return (
-    <div className="container mt-4">
-      <h1 className="text-center mb-4">Hall Booking System</h1>
-      <BookingForm setBookings={setBookings} />
-      <BookingList bookings={bookings} />
-    </div>
+    <Router>
+      <Header />
+      <div className="container mt-4">
+        <Routes>
+          <Route path="/" element={<BookingList />} />
+          <Route path="/booking/:id?" element={<BookingForm />} />
+        </Routes>
+      </div>
+      <Footer />
+    </Router>
   );
 }
 

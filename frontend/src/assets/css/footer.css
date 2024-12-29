@@ -1,0 +1,30 @@
+/* Footer styles */
+.footer-custom {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 123, 255, 1) 0%,
+    rgba(0, 255, 127, 1) 100%
+  );
+  color: white;
+  padding: 30px 0;
+  box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer-text {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.footer-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #f7f7f7;
+  text-decoration: underline;
+}
