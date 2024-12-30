@@ -101,7 +101,4 @@ Run the React frontend with npm start.
 ### 3. Database Configuration:
 If you need to reset or modify your database, you can do so through pgAdmin or by using PostgreSQL's command-line interface.
 Make sure the database connection in application.properties is correctly configured to match your local PostgreSQL setup.
-Conclusion
-This README provides a comprehensive guide for setting up and running the Hall Booking System. Ensure that all the dependencies are correctly installed, the services are running, and the frontend is properly connected to the backend to ensure smooth functionality.
 
-Once your project is up and running, you should be able to interact with both the backend and frontend seamlessly.
