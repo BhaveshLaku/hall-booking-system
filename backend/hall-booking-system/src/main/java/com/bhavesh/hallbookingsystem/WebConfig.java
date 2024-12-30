@@ -13,6 +13,8 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addMapping("/**")  // Enable CORS for all endpoints
                 .allowedOrigins("http://localhost:3000")  // Allow React frontend (adjust the port if needed)
                 .allowedMethods("GET", "POST", "PUT", "DELETE")
+                .allowedHeaders("*")
                 .allowCredentials(true);
+
     }
 }

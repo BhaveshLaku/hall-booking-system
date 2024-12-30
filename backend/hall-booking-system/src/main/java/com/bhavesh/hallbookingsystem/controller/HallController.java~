@@ -1,0 +1,31 @@
+package com.bhavesh.hallbookingsystem.controller;
+
+import com.bhavesh.hallbookingsystem.entity.Hall;
+import com.bhavesh.hallbookingsystem.service.HallService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+@RestController
+@RequestMapping("/api/halls")
+public class HallController {
+
+    @Autowired
+    private HallService hallService;
+
+    // Endpoint to get all hall names
+    @GetMapping("/names")
+    public ResponseEntity<List<String>> getHallNames() {
+        // Fetches all halls and extracts only their names
+        List<String> hallNames = hallService.getAllHalls().stream()
+                .map(Hall::getName) // This will use Lombok-generated getName() method
+                .collect(Collectors.toList());
+
+        // Return response with HTTP 200 OK status and hall names
+        return ResponseEntity.ok(hallNames);
+    }
+
+}

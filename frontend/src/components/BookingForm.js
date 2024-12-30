@@ -17,7 +17,7 @@ const BookingForm = () => {
     endDate: "",
     rent: 0,
     additionalCharges: 0,
-    hallName: "",
+    hallName: "", // this will hold the selected hall name
     bookingType: "",
     status: "Pending",
     remark: "",
@@ -76,6 +76,20 @@ const BookingForm = () => {
       .catch((error) => setError("Error creating booking: " + error.message));
   };
 
+  // Predefined list of hall names
+  const hallNames = [
+    "Grand Hall",
+    "Silver Hall",
+    "Emerald Hall",
+    "Crystal Hall",
+    "Diamond Hall",
+    "Platinum Hall",
+    "Royal Hall",
+    "Majestic Hall",
+    "Regal Hall",
+    "Prestige Hall",
+  ];
+
   return (
     <div className="booking-form-container">
       <h3>{id ? "Edit Reservation" : "Book Your Hall"}</h3>
@@ -126,12 +140,19 @@ const BookingForm = () => {
             Hall Name <span className="required">*</span>
           </Form.Label>
           <Form.Control
-            type="text"
+            as="select"
             name="hallName"
             value={booking.hallName}
             onChange={handleChange}
             required
-          />
+          >
+            <option value="">Select Hall</option>
+            {hallNames.map((hall, index) => (
+              <option key={index} value={hall}>
+                {hall}
+              </option>
+            ))}
+          </Form.Control>
         </Form.Group>
 
         <Form.Group className="form-group">
