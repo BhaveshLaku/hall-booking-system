@@ -17,8 +17,9 @@ Before starting the project, make sure you have the following installed on your 
 ### 1. Clone the repository:  
 
  
- git clone <your-repository-link> 
- cd <your-repository-folder>
+```bash
+git clone <your-repository-link>
+cd <your-repository-folder>
 
 
 ### 2. Set up the PostgreSQL Database:
