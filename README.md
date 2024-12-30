@@ -6,19 +6,19 @@ This project is a Hall Booking System developed using Spring Boot for the backen
 ## Prerequisites
 Before starting the project, make sure you have the following installed on your system:
 
-Java 21+ (for Spring Boot)
-Node.js (for React.js)
-npm (Node Package Manager)
-PostgreSQL
-Git (for version control)
+- **Java 21+** (for Spring Boot)
+- **Node.js** (for React.js)
+- **npm** (Node Package Manager)
+- **PostgreSQL**
+- **Git** (for version control)
 
 ## Backend Setup (Spring Boot with PostgreSQL)
 
 ### 1. Clone the repository:  
 
  
- `git clone <your-repository-link> 
- cd <your-repository-folder>`
+ git clone <your-repository-link> 
+ cd <your-repository-folder>
 
 
 ### 2. Set up the PostgreSQL Database:
